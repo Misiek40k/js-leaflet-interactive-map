@@ -22,21 +22,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 100px;
   height: 100px;
 }
-.sprite-gulp {
-  background-image: url(../images/sprites.png);
-  background-position: -102px 0px;
-  width: 100px;
-  height: 100px;
-}
 .sprite-npm {
   background-image: url(../images/sprites.png);
-  background-position: 0px -102px;
-  width: 100px;
-  height: 100px;
-}
-.sprite-yeoman {
-  background-image: url(../images/sprites.png);
-  background-position: -102px -102px;
+  background-position: -102px 0px;
   width: 100px;
   height: 100px;
 }
