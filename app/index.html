@@ -32,8 +32,40 @@
   </header>
 
   <main>
-    <div class="accordion" id="mainAccordion">
-      
+    <div class="container">
+      <div class="accordion" id="mainAccordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Interactive Map
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+            <div class="card-body">
+              Card one
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Your markers coordinates
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+            <div class="card-body">
+              Card two
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
