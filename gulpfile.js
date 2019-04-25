@@ -23,14 +23,6 @@ var browsers = [
 ];
 var entries = [];
 
-// Lint JavaScript
-gulp.task('lint', function () {
-  return gulp.src('app/scripts/**/*.js')
-    .pipe($.eslint())
-    .pipe($.eslint.format())
-    .pipe($.eslint.failAfterError());
-});
-
 // Build stylesheets for local development
 gulp.task('styles:dev', ['sprites', 'fonts'], function () {
   return gulp.src('app/styles/**/*.scss')
@@ -204,7 +196,6 @@ gulp.task('serve', ['pre:serve'], function () {
       runSequence('scripts:dev');
     }
   });
-  gulp.watch('app/scripts/**/*.js', ['lint']);
   gulp.watch('app/styles/**/*.scss', ['styles:dev']);
   gulp.watch('app/images/_sprites/*.png', ['styles:dev']);
   gulp.watch('app/fonts/_glyphs/*.svg', ['styles:dev']);
