@@ -20,8 +20,12 @@ function addMarker(e) {
   newMarker = new L.marker(e.latlng, {
       draggable: 'true'
     })
-    .addTo(map);
-    newMarker.bindPopup('popup').openPopup();
-    console.log(newMarker.getLatLng());
+    .addTo(map)
+    .bindPopup(e.latlng.toString())
+    .openPopup();
 
+  newMarker.on("dragend", function (e) {
+    let chagedPos = e.target.getLatLng();
+    this.bindPopup(chagedPos.toString()).openPopup();
+  });
 }
