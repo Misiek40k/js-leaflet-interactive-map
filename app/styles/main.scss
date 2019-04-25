@@ -19,13 +19,16 @@ body {
     @include media-breakpoint-up(md) {
       font-size: 2rem;
     }
-
   }
 
   h3 {
     margin: 0;
     color: $transparent-text-color;
   }
+}
+
+.accordion {
+  margin: 0 0 1.875rem;
 }
 
 .btn {
@@ -40,4 +43,8 @@ body {
   @include media-breakpoint-up(lg) {
     height: 35rem;
   }
+}
+
+.footer {
+  background-color: $footer-color;
 }
