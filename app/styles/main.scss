@@ -13,7 +13,12 @@ body {
 
   h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+
   }
 
   h3 {
@@ -22,10 +27,19 @@ body {
   }
 }
 
+.btn {
+  @include media-breakpoint-up(lg) {
+    width:auto;
+  }
+}
+
 .accordion {
   padding: 1.875rem 0;
 }
 
 #mapid {
-  height: 40rem;
+  height: 25rem;
+  @include media-breakpoint-up(lg) {
+    height: 35rem;
+  }
 }
