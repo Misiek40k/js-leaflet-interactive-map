@@ -21,4 +21,7 @@ function addMarker(e) {
       draggable: 'true'
     })
     .addTo(map);
+    newMarker.bindPopup('popup').openPopup();
+    console.log(newMarker.getLatLng());
+
 }
