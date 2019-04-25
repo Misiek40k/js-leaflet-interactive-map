@@ -1,16 +1,21 @@
+@import "variables.scss";
+@import "reset.scss";
+
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #EFF0F1;
+  background-color: $background-color;
 }
 
-header {
+.header {
   padding: 1.875rem 0 1.875rem;
   background-color: #6f5499;
   color: #fff;
 
   h1 {
     margin: 0;
+    font-size: 2rem;
+
   }
 
   h3 {
@@ -19,8 +24,10 @@ header {
   }
 }
 
-.accordion{
+.accordion {
   padding: 1.875rem 0;
 }
 
-#mapid { height: 40rem; }
+#mapid {
+  height: 40rem;
+}
