@@ -25,7 +25,7 @@ function addMarker(e) {
     .openPopup();
 
   newMarker.on("dragend", function (e) {
-    let chagedPos = e.target.getLatLng();
-    this.bindPopup(chagedPos.toString()).openPopup();
+    let changedPos = e.target.getLatLng();
+    this.bindPopup(changedPos.toString()).openPopup();
   });
 }
