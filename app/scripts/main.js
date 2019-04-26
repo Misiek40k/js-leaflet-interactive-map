@@ -32,7 +32,7 @@ function addMarker(e) {
     const changedPos = e.target.getLatLng();
     this.bindPopup(changedPos.toString()).openPopup();
     updateMarkerArr(newMarker._leaflet_id, changedPos.toString());
-    updateTable();
+    updateTable(newMarker._leaflet_id, changedPos.toString());
   });
 }
 
@@ -71,9 +71,12 @@ function populateTable() {
   }
 
   myTable += `</table>`;
+  console.log(myTable);
   document.getElementById('table').innerHTML = myTable;
 }
 
-function updateTable() {
-
+function updateTable(id, coords) {
+  console.log(coords);
+  console.log(id);
+  document.getElementById(`coords${id}`).innerHTML = coords;
 }
