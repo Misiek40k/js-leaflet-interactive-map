@@ -49,3 +49,7 @@ function updateMarkerArr(id, coords) {
     }
   }
 }
+
+function populateTable() {
+
+}
