@@ -26,6 +26,7 @@ function addMarker(e) {
     .openPopup();
 
   addNewMarkerArr();
+  populateTable();
 
   newMarker.on("dragend", function (e) {
     const changedPos = e.target.getLatLng();
@@ -50,6 +51,25 @@ function updateMarkerArr(id, coords) {
   }
 }
 
+// add marker coords to table
 function populateTable() {
+  const objLength = coArr.length;
+  let myTable = `
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Coordinates</th>
+      </tr>`;
 
+  for (var i = 0; i < objLength; i++) {
+    myTable += `
+      <tr> 
+        <td>${i+1}</td>
+        <td>${coArr[i].coords}</tD>
+      </tr>`
+  }
+
+  myTable += `</table>`;
+
+  document.getElementById('table').innerHTML = myTable;
 }
