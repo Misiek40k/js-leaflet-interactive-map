@@ -1,6 +1,6 @@
 let map = L.map('mapid').setView([51.505, -0.09], 13);
 let newMarker;
-const coArr = [];
+var coArr = [];
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -27,13 +27,10 @@ function addMarker(e) {
 
   addTable();
 
-  console.log(coArr);
-
   newMarker.on("dragend", function (e) {
     let changedPos = e.target.getLatLng();
     this.bindPopup(changedPos.toString()).openPopup();
-    updateTable();
-    console.log(coArr);
+    updateTable(newMarker._leaflet_id, changedPos.toString());
   });
 }
 
@@ -44,6 +41,10 @@ function addTable() {
   });
 }
 
-function updateTable() {
-  
+function updateTable(id, coords) {
+  for (var j = 0; j < coArr.length; j++) {
+    if (coArr[j].id == id) {
+      coArr[j].coords = coords
+    }
+  }
 }
