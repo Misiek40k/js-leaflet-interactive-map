@@ -31,8 +31,8 @@ function addMarker(e) {
   newMarker.on("dragend", function (e) {
     const changedPos = e.target.getLatLng();
     this.bindPopup(changedPos.toString()).openPopup();
-    updateMarkerArr(newMarker._leaflet_id, changedPos.toString());
-    updateTable(newMarker._leaflet_id, changedPos.toString());
+    updateMarkerArr(this._leaflet_id, changedPos.toString());
+    updateTable(this._leaflet_id, changedPos.toString());
   });
 }
 
