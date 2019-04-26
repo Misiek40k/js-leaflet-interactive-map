@@ -44,7 +44,7 @@ function addNewMarkerArr() {
 }
 
 function updateMarkerArr(id, coords) {
-  for (var i = 0; i < coArr.length; i++) {
+  for (let i = 0; i < coArr.length; i++) {
     if (coArr[i].id == id) {
       coArr[i].coords = coords;
       break;
@@ -62,7 +62,7 @@ function populateTable() {
         <th>Coordinates</th>
       </tr>`;
 
-  for (var i = 0; i < coArr.length; i++) {
+  for (let i = 0; i < coArr.length; i++) {
     myTable += `
       <tr>
         <td>${i+1}</td>
