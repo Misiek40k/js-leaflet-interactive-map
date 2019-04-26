@@ -71,12 +71,9 @@ function populateTable() {
   }
 
   myTable += `</table>`;
-  console.log(myTable);
   document.getElementById('table').innerHTML = myTable;
 }
 
 function updateTable(id, coords) {
-  console.log(coords);
-  console.log(id);
   document.getElementById(`coords${id}`).innerHTML = coords;
 }
