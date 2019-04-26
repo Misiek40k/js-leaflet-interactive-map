@@ -1,6 +1,6 @@
-let map = L.map('mapid').setView([51.505, -0.09], 13);
+const map = L.map('mapid').setView([51.505, -0.09], 13);
 let newMarker;
-var coArr = [];
+const coArr = [];
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -25,26 +25,27 @@ function addMarker(e) {
     .bindPopup(e.latlng.toString())
     .openPopup();
 
-  addTable();
+  addNewMarkerArr();
 
   newMarker.on("dragend", function (e) {
-    let changedPos = e.target.getLatLng();
+    const changedPos = e.target.getLatLng();
     this.bindPopup(changedPos.toString()).openPopup();
-    updateTable(newMarker._leaflet_id, changedPos.toString());
+    updateMarkerArr(newMarker._leaflet_id, changedPos.toString());
   });
 }
 
-function addTable() {
+function addNewMarkerArr() {
   coArr.push({
     id: `${newMarker._leaflet_id}`,
     coords: `${newMarker.getLatLng()}`
   });
 }
 
-function updateTable(id, coords) {
-  for (var j = 0; j < coArr.length; j++) {
-    if (coArr[j].id == id) {
-      coArr[j].coords = coords
+function updateMarkerArr(id, coords) {
+  for (var i = 0; i < coArr.length; i++) {
+    if (coArr[i].id == id) {
+      coArr[i].coords = coords;
+      break;
     }
   }
 }
