@@ -32,6 +32,7 @@ function addMarker(e) {
     const changedPos = e.target.getLatLng();
     this.bindPopup(changedPos.toString()).openPopup();
     updateMarkerArr(newMarker._leaflet_id, changedPos.toString());
+    populateTable();
   });
 }
 
@@ -53,7 +54,7 @@ function updateMarkerArr(id, coords) {
 
 // add marker coords to table
 function populateTable() {
-  const objLength = coArr.length;
+  const arrLength = coArr.length;
   let myTable = `
     <table>
       <tr>
@@ -61,15 +62,14 @@ function populateTable() {
         <th>Coordinates</th>
       </tr>`;
 
-  for (var i = 0; i < objLength; i++) {
+  for (var i = 0; i < arrLength; i++) {
     myTable += `
-      <tr> 
+      <tr>
         <td>${i+1}</td>
-        <td>${coArr[i].coords}</tD>
+        <td>${coArr[i].coords}</td>
       </tr>`
   }
 
   myTable += `</table>`;
-
   document.getElementById('table').innerHTML = myTable;
 }
