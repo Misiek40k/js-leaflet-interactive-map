@@ -32,7 +32,7 @@ function addMarker(e) {
     const changedPos = e.target.getLatLng();
     this.bindPopup(changedPos.toString()).openPopup();
     updateMarkerArr(newMarker._leaflet_id, changedPos.toString());
-    updateTable(changedPos.toString());
+    updateTable();
   });
 }
 
